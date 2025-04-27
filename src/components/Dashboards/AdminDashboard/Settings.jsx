@@ -14,7 +14,7 @@ function Settings() {
       newPassword: pass,
     };
     
-    let result = await fetch("http://localhost:3000/api/auth/change-password", {
+    let result = await fetch(`${import.meta.env.VITE_SERVER_URL}/api/auth/change-password`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -24,7 +24,7 @@ function Home() {
   const fetchComplaints = async () => {
     try {
       const hostelId = hostel._id;
-      const res = await fetch("http://localhost:3000/api/complaint/hostel", {
+      const res = await fetch(`${import.meta.env.VITE_SERVER_URL}/api/complaint/hostel`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ hostel: hostelId }),
@@ -43,7 +43,7 @@ function Home() {
   const fetchSuggestions = async () => {
     try {
       const hostelId = hostel._id;
-      const res = await fetch("http://localhost:3000/api/suggestion/hostel", {
+      const res = await fetch(`${import.meta.env.VITE_SERVER_URL}/api/suggestion/hostel`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ hostel: hostelId }),
@@ -63,7 +63,7 @@ function Home() {
   const fetchMessOffRequests = async () => {
     try {
       const hostelId = hostel._id;
-      const res = await fetch("http://localhost:3000/api/messoff/list", {
+      const res = await fetch(`${import.meta.env.VITE_SERVER_URL}/api/messoff/list`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ hostel: hostelId }),

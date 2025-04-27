@@ -15,7 +15,7 @@ function Attendance() {
     try {
       setProgress(30);
       const hostelId = JSON.parse(localStorage.getItem("hostel"))._id;
-      const response = await fetch("http://localhost:3000/api/attendance/getHostelAttendance", {
+      const response = await fetch(`${import.meta.env.VITE_SERVER_URL}/api/attendance/getHostelAttendance`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ hostel: hostelId }),
@@ -57,7 +57,7 @@ function Attendance() {
 
   const handleMarkAttendance = async (studentId, status) => {
     try {
-      const res = await fetch(`http://localhost:3000/api/attendance/mark`, {
+      const res = await fetch(`${import.meta.env.VITE_SERVER_URL}/api/attendance/mark`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ student: studentId, status: status ? "present" : "absent" }),

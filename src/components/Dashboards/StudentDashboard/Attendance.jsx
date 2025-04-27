@@ -11,7 +11,7 @@ const Attendance = () => {
     if (!studentData) return;
 
     try {
-      const response = await fetch("http://localhost:3000/api/attendance/get", {
+      const response = await fetch(`${import.meta.env.VITE_SERVER_URL}/api/attendance/get`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

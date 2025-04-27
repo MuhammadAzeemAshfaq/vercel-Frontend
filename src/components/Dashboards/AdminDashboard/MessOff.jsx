@@ -8,7 +8,7 @@ function MessOff() {
   const getRequests = async () => {
     setProgress(30);
     const hostel = JSON.parse(localStorage.getItem("hostel"));
-    const res = await fetch("http://localhost:3000/api/messoff/list", {
+    const res = await fetch(`${import.meta.env.VITE_SERVER_URL}/api/messoff/list`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -43,7 +43,7 @@ function MessOff() {
   };
 
   const updateRequest = async (id, status) => {
-    const res = await fetch("http://localhost:3000/api/messoff/update", {
+    const res = await fetch(`${import.meta.env.VITE_SERVER_URL}/api/messoff/update`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

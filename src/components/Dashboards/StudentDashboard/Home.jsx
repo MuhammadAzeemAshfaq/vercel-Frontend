@@ -21,7 +21,7 @@ const InvoiceList = () => {
     const fetchInvoices = async () => {
       const student = JSON.parse(localStorage.getItem("student"));
       try {
-        const response = await fetch("http://localhost:3000/api/invoice/student", {
+        const response = await fetch(`${import.meta.env.VITE_SERVER_URL}/api/invoice/student`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -127,7 +127,7 @@ const Home = () => {
   useEffect(() => {
     const fetchAttendance = async () => {
       try {
-        const res = await fetch("http://localhost:3000/api/attendance/get", {
+        const res = await fetch(`${import.meta.env.VITE_SERVER_URL}/api/attendance/get`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

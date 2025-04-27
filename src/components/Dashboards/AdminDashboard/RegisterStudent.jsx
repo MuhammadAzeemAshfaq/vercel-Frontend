@@ -26,7 +26,7 @@ function RegisterStudent() {
         hostel: hostel,
         password: password
       };
-      const res = await fetch("http://localhost:3000/api/student/register-student", {
+      const res = await fetch(`${import.meta.env.VITE_SERVER_URL}/api/student/register-student`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -13,7 +13,7 @@ function Invoices() {
     const hostel = JSON.parse(localStorage.getItem("hostel"));
 
     try {
-      const response = await fetch("http://localhost:3000/api/invoice/getbyid", {
+      const response = await fetch(`${import.meta.env.VITE_SERVER_URL}/api/invoice/getbyid`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ hostel: hostel._id }),
@@ -39,7 +39,7 @@ function Invoices() {
     const hostel = JSON.parse(localStorage.getItem("hostel"));
 
     try {
-      const response = await fetch("http://localhost:3000/api/invoice/generate", {
+      const response = await fetch(`${import.meta.env.VITE_SERVER_URL}/api/invoice/generate`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ hostel: hostel._id }),
@@ -64,7 +64,7 @@ function Invoices() {
     setProgress(30);
 
     try {
-      const response = await fetch("http://localhost:3000/api/invoice/update", {
+      const response = await fetch(`${import.meta.env.VITE_SERVER_URL}/api/invoice/update`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ student: studentId, status: "approved" }),

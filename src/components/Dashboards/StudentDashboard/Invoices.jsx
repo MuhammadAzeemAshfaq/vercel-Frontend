@@ -12,7 +12,7 @@ const Invoices = () => {
     const fetchInvoices = async () => {
       const student = JSON.parse(localStorage.getItem("student"));
       try {
-        const response = await fetch("http://localhost:3000/api/invoice/student", {
+        const response = await fetch(`${import.meta.env.VITE_SERVER_URL}/api/invoice/student`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

@@ -16,7 +16,7 @@ const AllStudents = () => {
   const downloadCSV = async () => {
     const hostelId = JSON.parse(localStorage.getItem('hostel'))?._id;
     try {
-      const response = await fetch("http://localhost:3000/api/student/csv", {
+      const response = await fetch(`${import.meta.env.VITE_SERVER_URL}/api/student/csv`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ hostel: hostelId }),
@@ -40,7 +40,7 @@ const AllStudents = () => {
 
   const removeStudent = async (studentId) => {
     try {
-      const response = await fetch("http://localhost:3000/api/student/delete-student", {
+      const response = await fetch(`${import.meta.env.VITE_SERVER_URL}/api/student/delete-student`, {
         method: "DELETE",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ id: studentId }),
